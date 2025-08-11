@@ -149,7 +149,11 @@
 
   /* Remove Button */
   .btn-remove {
-    @apply px-200 py-100 text-preset-6 border border-neutral-300 rounded-full transition-all text-neutral-900;
+    @apply px-200 py-100 border border-neutral-300 rounded-full transition-all text-neutral-900;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.03125rem;
     @apply dark:text-neutral-0 dark:border-neutral-600;
     @apply hover:bg-red-700 hover:text-neutral-0 hover:border-red-700;
     @apply dark:hover:bg-red-500 dark:hover:border-red-500;
