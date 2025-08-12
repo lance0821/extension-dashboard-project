@@ -140,32 +140,91 @@
 
   /* Theme Toggle Button */
   .theme-toggle {
-    @apply w-[50px] h-[50px] bg-neutral-100 rounded-12 flex items-center justify-center transition-colors;
-    @apply dark:bg-neutral-700;
-    @apply hover:bg-neutral-300 dark:hover:bg-neutral-600;
-    @apply focus:outline-none focus:shadow-[0px_0px_0px_2px_theme(colors.neutral.0),0px_0px_0px_4px_theme(colors.red.700)];
-    @apply dark:focus:shadow-[0px_0px_0px_2px_theme(colors.neutral.800),0px_0px_0px_4px_theme(colors.red.500)];
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-neutral-100);
+    border-radius: var(--radius-12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s;
+
+    @variant dark {
+      background-color: var(--color-neutral-700);
+    }
+
+    @variant hover {
+      background-color: var(--color-neutral-300);
+
+      @variant dark {
+        background-color: var(--color-neutral-600);
+      }
+    }
+
+    @variant focus {
+      outline: none;
+      box-shadow: 0px 0px 0px 2px var(--color-neutral-0), 0px 0px 0px 4px var(--color-red-700);
+
+      @variant dark {
+        box-shadow: 0px 0px 0px 2px var(--color-neutral-800), 0px 0px 0px 4px var(--color-red-500);
+      }
+    }
   }
 
   /* Remove Button */
   .btn-remove {
-    @apply px-200 py-100 border border-neutral-300 rounded-full transition-all text-neutral-900;
+    padding: var(--spacing-100) var(--spacing-200);
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--radius-full);
+    transition: all 0.2s;
+    color: var(--color-neutral-900);
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: -0.03125rem;
-    @apply dark:text-neutral-0 dark:border-neutral-600;
-    @apply hover:bg-red-700 hover:text-neutral-0 hover:border-red-700;
-    @apply dark:hover:bg-red-500 dark:hover:border-red-500;
-    @apply focus:outline-none focus:shadow-[0px_0px_0px_2px_theme(colors.neutral.0),0px_0px_0px_4px_theme(colors.red.700)];
-    @apply dark:focus:shadow-[0px_0px_0px_2px_theme(colors.neutral.800),0px_0px_0px_4px_theme(colors.red.500)];
+
+    @variant dark {
+      color: var(--color-neutral-0);
+      border-color: var(--color-neutral-600);
+    }
+
+    @variant hover {
+      background-color: var(--color-red-700);
+      color: var(--color-neutral-0);
+      border-color: var(--color-red-700);
+
+      @variant dark {
+        background-color: var(--color-red-500);
+        border-color: var(--color-red-500);
+      }
+    }
+
+    @variant focus {
+      outline: none;
+      box-shadow: 0px 0px 0px 2px var(--color-neutral-0), 0px 0px 0px 4px var(--color-red-700);
+
+      @variant dark {
+        box-shadow: 0px 0px 0px 2px var(--color-neutral-800), 0px 0px 0px 4px var(--color-red-500);
+      }
+    }
   }
 
   /* Toggle Switch */
   .toggle-switch {
-    @apply relative w-[40px] h-[20px] cursor-pointer rounded-full;
-    @apply focus:outline-none focus:shadow-[0px_0px_0px_2px_theme(colors.neutral.0),0px_0px_0px_4px_theme(colors.red.700)];
-    @apply dark:focus:shadow-[0px_0px_0px_2px_theme(colors.neutral.800),0px_0px_0px_4px_theme(colors.red.500)];
+    position: relative;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: var(--radius-full);
+
+    @variant focus {
+      outline: none;
+      box-shadow: 0px 0px 0px 2px var(--color-neutral-0), 0px 0px 0px 4px var(--color-red-700);
+
+      @variant dark {
+        box-shadow: 0px 0px 0px 2px var(--color-neutral-800), 0px 0px 0px 4px var(--color-red-500);
+      }
+    }
   }
 
   .toggle-switch-track {
@@ -328,10 +387,24 @@
 
   /* Tab Button */
   .tab-button {
-    @apply px-200 py-075 rounded-full transition-all text-[16px];
-    @apply md:px-250 md:py-100 md:text-[20px];
-    @apply focus:outline-none focus:shadow-[0px_0px_0px_2px_theme(colors.neutral.0),0px_0px_0px_4px_theme(colors.red.700)];
-    @apply dark:focus:shadow-[0px_0px_0px_2px_theme(colors.neutral.800),0px_0px_0px_4px_theme(colors.red.500)];
+    padding: var(--spacing-075) var(--spacing-200);
+    border-radius: var(--radius-full);
+    transition: all 0.2s;
+    font-size: 16px;
+
+    @media (min-width: 768px) {
+      padding: var(--spacing-100) var(--spacing-250);
+      font-size: 20px;
+    }
+
+    @variant focus {
+      outline: none;
+      box-shadow: 0px 0px 0px 2px var(--color-neutral-0), 0px 0px 0px 4px var(--color-red-700);
+
+      @variant dark {
+        box-shadow: 0px 0px 0px 2px var(--color-neutral-800), 0px 0px 0px 4px var(--color-red-500);
+      }
+    }
   }
 
   .tab-button-active {
@@ -379,52 +452,50 @@
   }
 }
 
-@layer utilities {
-  /* Text Preset 1 - 34px Bold */
-  .text-preset-1 {
-    font-size: 2.125rem; /* 34px */
-    font-weight: 700;
-    line-height: 1; /* 100% */
-    letter-spacing: -0.00625rem; /* -0.1px */
-  }
+/* Text Preset 1 - 34px Bold */
+@utility text-preset-1 {
+  font-size: 2.125rem; /* 34px */
+  font-weight: 700;
+  line-height: 1; /* 100% */
+  letter-spacing: -0.00625rem; /* -0.1px */
+}
 
-  /* Text Preset 2 - 20px Bold */
-  .text-preset-2 {
-    font-size: 1.25rem; /* 20px */
-    font-weight: 700;
-    line-height: 1.2; /* 120% */
-    letter-spacing: -0.0125rem; /* -0.2px */
-  }
+/* Text Preset 2 - 20px Bold */
+@utility text-preset-2 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 700;
+  line-height: 1.2; /* 120% */
+  letter-spacing: -0.0125rem; /* -0.2px */
+}
 
-  /* Text Preset 3 - 20px Regular */
-  .text-preset-3 {
-    font-size: 1.25rem; /* 20px */
-    font-weight: 400;
-    line-height: 1.4; /* 140% */
-    letter-spacing: -0.01875rem; /* -0.3px */
-  }
+/* Text Preset 3 - 20px Regular */
+@utility text-preset-3 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 400;
+  line-height: 1.4; /* 140% */
+  letter-spacing: -0.01875rem; /* -0.3px */
+}
 
-  /* Text Preset 4 - 20px Medium */
-  .text-preset-4 {
-    font-size: 1.25rem; /* 20px */
-    font-weight: 500;
-    line-height: 1.4; /* 140% */
-    letter-spacing: -0.01875rem; /* -0.3px */
-  }
+/* Text Preset 4 - 20px Medium */
+@utility text-preset-4 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 500;
+  line-height: 1.4; /* 140% */
+  letter-spacing: -0.01875rem; /* -0.3px */
+}
 
-  /* Text Preset 5 - 16px Regular */
-  .text-preset-5 {
-    font-size: 1rem; /* 16px */
-    font-weight: 400;
-    line-height: 1.4; /* 140% */
-    letter-spacing: -0.03125rem; /* -0.5px */
-  }
+/* Text Preset 5 - 16px Regular */
+@utility text-preset-5 {
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  line-height: 1.4; /* 140% */
+  letter-spacing: -0.03125rem; /* -0.5px */
+}
 
-  /* Text Preset 6 - 16px Medium */
-  .text-preset-6 {
-    font-size: 1rem; /* 16px */
-    font-weight: 500;
-    line-height: 1.4; /* 140% */
-    letter-spacing: -0.03125rem; /* -0.5px */
-  }
+/* Text Preset 6 - 16px Medium */
+@utility text-preset-6 {
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+  line-height: 1.4; /* 140% */
+  letter-spacing: -0.03125rem; /* -0.5px */
 }
