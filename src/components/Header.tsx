@@ -1,9 +1,9 @@
 import iconMoon from "../assets/images/icon-moon.svg";
 import iconSun from "../assets/images/icon-sun.svg";
 import { useTheme } from "../hooks/useTheme";
-import Logo from "./Logo";
+import { Logo } from "./Logo";
 
-export default function Header() {
+export function Header() {
   const { isDarkMode, toggleTheme } = useTheme();
   return (
     <header className='app-header'>

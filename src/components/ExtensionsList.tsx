@@ -3,12 +3,12 @@ import { ExtensionsProvider } from "../context/ExtensionsProvider";
 import { useExtensionsState } from "../hooks/useExtensionsState";
 import { useFilteredExtensions } from "../hooks/useFilteredExtensions";
 import { getLogo } from "../utils/logoLoader";
-import ExtensionCard from "./ExtensionCard";
-import FilterHeader from "./FilterHeader";
+import { ExtensionCard } from "./ExtensionCard";
+import { FilterHeader } from "./FilterHeader";
 
 type TabType = "all" | "active" | "inactive";
 
-export default function ExtensionsList() {
+export function ExtensionsList() {
   const [activeTab, setActiveTab] = useState<TabType>("all");
   const { extensions, handleToggleExtension, handleRemoveExtension } =
     useExtensionsState();

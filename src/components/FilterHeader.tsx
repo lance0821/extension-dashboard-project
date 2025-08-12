@@ -1,4 +1,4 @@
-import TabButton from "./TabButton";
+import { TabButton } from "./TabButton";
 
 type TabType = "all" | "active" | "inactive";
 
@@ -7,7 +7,7 @@ interface FilterHeaderProps {
   onTabChange: (tab: TabType) => void;
 }
 
-export default function FilterHeader({
+export function FilterHeader({
   activeTab,
   onTabChange,
 }: FilterHeaderProps) {

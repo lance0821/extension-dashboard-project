@@ -4,7 +4,7 @@ interface ExtensionInfoProps {
   description: string;
 }
 
-export default function ExtensionInfo({
+export function ExtensionInfo({
   icon,
   title,
   description,

@@ -1,5 +1,5 @@
-import ExtensionActions from "./ExtensionActions";
-import ExtensionInfo from "./ExtensionInfo";
+import { ExtensionActions } from "./ExtensionActions";
+import { ExtensionInfo } from "./ExtensionInfo";
 
 export interface Extension {
   name: string;
@@ -13,7 +13,7 @@ interface ExtensionCardProps {
   index: number;
 }
 
-export default function ExtensionCard({
+export function ExtensionCard({
   extension,
   index,
 }: ExtensionCardProps) {

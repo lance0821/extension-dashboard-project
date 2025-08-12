@@ -2,7 +2,7 @@ interface LogoProps {
   className?: string;
 }
 
-export default function Logo({ className = "w-[40px] h-[41px]" }: LogoProps) {
+export function Logo({ className = "w-[40px] h-[41px]" }: LogoProps) {
   return (
     <svg
       width='40'

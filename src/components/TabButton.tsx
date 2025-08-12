@@ -4,7 +4,7 @@ interface TabButtonProps {
   onClick: () => void;
 }
 
-export default function TabButton({
+export function TabButton({
   label,
   isActive,
   onClick,

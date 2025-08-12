@@ -5,7 +5,7 @@ interface ExtensionActionsProps {
   index: number;
 }
 
-export default function ExtensionActions({
+export function ExtensionActions({
   isActive,
   index,
 }: ExtensionActionsProps) {
