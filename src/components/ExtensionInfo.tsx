@@ -1,8 +1,8 @@
-interface ExtensionInfoProps {
+type ExtensionInfoProps = {
   icon: string;
   title: string;
   description: string;
-}
+};
 
 export function ExtensionInfo({
   icon,

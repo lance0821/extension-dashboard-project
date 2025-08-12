@@ -1,9 +1,9 @@
 import { useExtensions } from "../hooks/useExtensions";
 
-interface ExtensionActionsProps {
+type ExtensionActionsProps = {
   isActive: boolean;
   index: number;
-}
+};
 
 export function ExtensionActions({
   isActive,

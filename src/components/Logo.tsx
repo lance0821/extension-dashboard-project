@@ -1,6 +1,6 @@
-interface LogoProps {
+type LogoProps = {
   className?: string;
-}
+};
 
 export function Logo({ className = "w-[40px] h-[41px]" }: LogoProps) {
   return (

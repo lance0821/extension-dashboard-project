@@ -2,10 +2,10 @@ import { TabButton } from "./TabButton";
 
 type TabType = "all" | "active" | "inactive";
 
-interface FilterHeaderProps {
+type FilterHeaderProps = {
   activeTab: TabType;
   onTabChange: (tab: TabType) => void;
-}
+};
 
 export function FilterHeader({
   activeTab,

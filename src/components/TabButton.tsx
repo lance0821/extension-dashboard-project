@@ -1,8 +1,8 @@
-interface TabButtonProps {
+type TabButtonProps = {
   label: string;
   isActive: boolean;
   onClick: () => void;
-}
+};
 
 export function TabButton({
   label,

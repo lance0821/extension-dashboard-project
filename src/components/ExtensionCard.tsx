@@ -1,17 +1,17 @@
 import { ExtensionActions } from "./ExtensionActions";
 import { ExtensionInfo } from "./ExtensionInfo";
 
-export interface Extension {
+export type Extension = {
   name: string;
   description: string;
   logo: string;
   isActive: boolean;
-}
+};
 
-interface ExtensionCardProps {
+type ExtensionCardProps = {
   extension: Extension;
   index: number;
-}
+};
 
 export function ExtensionCard({
   extension,
